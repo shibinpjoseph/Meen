@@ -1,0 +1,101 @@
+/* Empty. Add your own CSS if you like */
+body{
+    background: #2f4159;
+}
+.welcome p{
+    color: #fff;
+    font-size: 12px;
+}
+.ion-nav-view , .view, .pane{
+    background: #2f4159;
+}
+.welcome .wrapper h1{
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+.welcome .wrapper img {
+    margin: 0 auto;
+    width: 150px;
+    display: block;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.item-select select{
+    direction: ltr;
+}
+.welcome .list{
+    width: 85%;
+    margin: 0 auto;
+}
+.item-avatar{
+    min-height: 100%;
+    padding-left: 16px;
+}
+.item-image{
+    margin-bottom: 10px;
+}
+.card p{
+    padding: 0 16px;
+}
+.button.button-blue{
+    width: 100%;
+    margin: 16px 0;
+    background-color: #009a9a;
+    border: 0px;
+    border-radius: 0px;
+    color:#fff;
+    text-align: left;
+    line-height: 46px;
+    font-size: 14px;
+}
+.item.button-blue, .item-select select, .welcome .item-input, .button.button-positive{
+    background-color: #009a9a;
+    border: 0px;
+    color: #fff;
+    font-size: 14px;
+}
+.item .input-label{
+    color: #fff;
+    font-size: 14px;
+}
+.item-select select{
+    padding: 12px 32px 11px 16px;
+}
+.item-select:after{
+    color:#2D2727;
+}
+a.button.icon-right:before{
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    margin-top: -6px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid;
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-bottom: 5px solid rgba(0, 0, 0, 0);
+    color: #2D2727;
+    content: "";
+    pointer-events: none;
+    border-top: 5px solid rgba(0, 0, 0, 0);
+}
+.welcome .item-input{
+    margin-top: 16px;
+}
+.welcome .item-input input{
+    color: #fff;
+}
+.tabs-icon-top .tabs{
+    display: none;
+}
+.bar.bar-dark{
+    background: #2f4159;
+    border: 0;
+}
+.bar-header {
+  top: 10px;
+}
+.has-header {
+  top: 30px;
+}

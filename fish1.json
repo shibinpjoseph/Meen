@@ -1,0 +1,93 @@
+{
+
+    "allfish": [
+
+
+        {
+
+            "fishID" : "1", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "Anchovy",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        },
+
+
+        {
+
+            "fishID" : "2", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "bbbbbb",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        },
+        
+        {
+
+            "fishID" : "3", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "cccccc",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        },
+        
+        {
+
+            "fishID" : "4", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "ddddddd",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        },
+        
+        {
+
+            "fishID" : "5", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "eeeeeee",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        },
+        
+        {
+
+            "fishID" : "3", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "cccccc",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        },
+        
+        {
+
+            "fishID" : "6", 
+            "fishImage" : "img/Nethili.png",
+            "fishNameEnglish" : "fffffff",
+            "fishNameMalayalam" : "Nethili, Kozhuva, Natholi, Netha, Nathal",
+            "fishNameTamil" : "Nethali, Nethili, Thogai meen",
+            "fishNameHindi" : "No Records",
+            "fishNameOther" : "Capsali Mandli(konkani) Phasa, Phansa(bengali)Purasa, Churali Patua, Dinasi, motyala, Enaga, Onaga, Phansi"
+            
+        }
+
+    ]
+
+}
