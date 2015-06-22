@@ -86,9 +86,7 @@ a.button.icon-right:before{
 .welcome .item-input input{
     color: #fff;
 }
-.tabs-icon-top .tabs{
-    display: none;
-}
+
 .bar.bar-dark{
     background: #2f4159;
     border: 0;

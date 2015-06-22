@@ -1,20 +1,20 @@
-angular.module('starter.controllers', [])
+angular.module('meen.controllers', [])
 
-.controller('DashCtrl', function($scope, $state) {
+.controller('DashCtrl', function($scope, $state, $location, dataService) {
     
-    console.log('DashCtrl');
+     console.log('DashCtrl');
+
+     $scope.user = {
+            query: '',
+            language:''
+        };
     
-    $scope.user = {
-        username: '',
-        language:''
-    };
-    
-    $scope.signIn = function(form) {
-        console.log(form);
-        if(form.$valid) {
-            console.log('Sign-In', $scope.user.username);
-            $state.go('tab.account');
-        }
+    $scope.signIn = function(user) {
+
+        query = $scope.user;
+        console.log("query:", query);
+        $location.url('/tab/list');
+
     };
     
     $scope.createTask = function(task) {
@@ -25,70 +25,51 @@ angular.module('starter.controllers', [])
         $scope.taskModal.hide();
         task.title = "";
     };
+})
 
+.controller('FishlistCtrl', function($scope, $state, $http, $q) {
     
-})
-
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-
-
-.controller('AccountCtrl', function($scope, $state, $http, $q) {
-    
-    console.log('AccountCtrl')
+    console.log('FishlistCtrl')
     
     $scope.init = function(){
-    
+
+        $scope.query = query;
+        console.log("queryWW:", query);
+
         $scope.getImages()
-        //$scope.clearSearch();
+
         .then(function(result){
-            //success
-            console.log("images:", result);
+            console.log("Fishes:", result);
             $scope.allfish = result.allfish;
-        
-        }, function(status){
-            //err
+         }, function(status){
             console.log("errors:", status);
             $scope.pageError = status;
         })
-        
-       // $scope.clearSearch()
-        
-        
     
     }
     
+
     $scope.getImages = function(){
         
         var defer = $q.defer();
         
         $http.get('fish1.json?callback=JSON_CALLBACK')
         
-        .success(function (result) {
-                
-            defer.resolve(result)
-
-        })
-        .error(function(status, err){
-            
-            defer.reject(status)
-        
-        })
+            .success(function (result) {
+                defer.resolve(result)
+            })
+            .error(function(status, err){
+                defer.reject(status)
+            })
         
         return defer.promise;
     
     }
     
-    $scope.fish = {search: ''}
+    $scope.orderArtist = 'fishNameMalayalam';
     
     $scope.clearSearch = function() {
-            $scope.fish.search = '';
+            $scope.query.query = "";
             console.log('click');
     };
     

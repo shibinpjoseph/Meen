@@ -1,0 +1,59 @@
+<ion-view>
+    <ion-header-bar class="bar-dark">
+    <h1 class="title">
+        <a href="#/tab/dash">
+            <img src="../img/logo.png" align="middle" width="80" />
+        </a>
+    </h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <div class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search" ng-model="query.query">
+            <i class="clear-search icon ion-ios7-close-empty" ng-click="clearSearch()"></i>
+          </div>
+          <label class="formgroup">by:
+             <select ng-model='orderArtist' >
+                 <option value='fishNameEnglish'>English</option>
+                 <option value='fishNameMalayalam'>Malayalam</option>
+                 <option value='fishNameTamil'>Tamil</option>
+                 <option value='fishNameHindi'>Hindi</option>
+                 <option value='fishNameOther'>Other</option>
+             </select>
+         </label>
+          <label class="formgroup">
+             <input type="radio" ng-model="direction" name="direction" checked>
+             ascending
+         </label>
+         <label class="formgroup">
+             <input type="radio" ng-model="direction" name="direction" value="reverse">
+             discending
+         </label>
+      </div>
+
+<!--
+      <ul class="list">
+            <li class="item" data-ng-repeat="fish in allfish | filter: fish.searchQuery">{{fish.fishNameEnglish}}</li>
+      </ul>
+-->
+      <div class="list card" ng-repeat="fish in allfish | filter: query.query | orderBy: orderArtist:direction">
+          <div class="item item-avatar">
+            <h2>{{ fish.fishNameEnglish }}</h2>
+          </div>
+          <div class="item item-image">
+            <img ng-src="{{ fish.fishImage }}">
+          </div>
+          <p><b>Tamil :</b> {{ fish.fishNameTamil }}</p>
+          <p><b>Malayalam :</b> {{ fish.fishNameMalayalam }}</p>
+          <p><b>Hindi :</b> {{ fish.fishNameHindi }}</p>
+          <p><b>Other :</b> {{ fish.fishNameOther }}</p>
+      </div>
+      <div ng-show="(allfish | filter: query.query).length == 0">
+          Fish not found !
+      </div>
+  </ion-content>
+</ion-view>
+
+
+

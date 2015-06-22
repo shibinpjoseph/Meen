@@ -1,14 +1,14 @@
 <ion-view>
-  <ion-content has class="padding welcome">
-   <form name="signinForm" novalidate="" ng-submit="signIn(signinForm)">
+  <ion-content class="padding welcome">
+   <form name="signinForm" novalidate="" >
     <div class="wrapper">
        <div>
            <h1>Welcome</h1>
        </div>
-        <img src="../img/logo.png" align="middle" />  
+            <img src="../img/logo.png" align="middle" />
         <div class="list">
             <label class="item item-input">
-                <input type="text" placeholder="Enter Fish Name" name="username" ng-model="user.username" ng-minlength="5" ng-maxlength="10">
+                <input type="text" placeholder="Enter Fish Name" name="username" ng-model="user.query">
             </label>
             
             <label class="item item-input item-select button-blue">

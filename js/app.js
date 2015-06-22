@@ -10,7 +10,7 @@ var App = angular.module("App",  ['ionic']);
 
 
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('meen', ['ionic', 'meen.controllers', 'meen.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -53,31 +53,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.list', {
+      url: '/list',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'tab-list': {
+          templateUrl: 'templates/tab-list.html',
+          controller: 'FishlistCtrl'
         }
       }
     });
