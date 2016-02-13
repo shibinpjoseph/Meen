@@ -1,37 +1,37 @@
 <ion-view>
-  <ion-content class="padding welcome">
-   <form name="signinForm" novalidate="" >
-    <div class="wrapper">
-       <div>
-           <h1>Welcome</h1>
-       </div>
-            <img src="../img/logo.png" align="middle" />
-        <div class="list">
-            <label class="item item-input">
-                <input type="text" placeholder="Enter Fish Name" name="username" ng-model="user.query">
-            </label>
-            
-            <label class="item item-input item-select button-blue">
-                <div class="input-label">
-                    Choose language
+    <ion-content class="padding welcome">
+        <form name="signinForm" novalidate="">
+            <div class="wrapper">
+                <div>
+                    <h1>Welcome</h1>
                 </div>
-            <select ng-model="user.language">
-                <option>Malayalam</option>
-                <option>English</option>
-                <option>Hindi</option>
-                <option>Tamil</option>
-            </select>
-            </label>
+                <img src="../img/logo.png" align="middle" />
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Enter Fish Name" name="username" ng-model="user.query">
+                    </label>
 
-            <button class="button button-block button-positive" ng-click="signIn(user)">
-               Search
-            </button>
-            <p>
-                This is an app to search and get your faverait fish name in different language.
-            </p>
-        </div>
-        
-    </div>
-      </form>
-  </ion-content>
+                    <label class="item item-input item-select button-blue">
+                        <div class="input-label">
+                            Choose language
+                        </div>
+                        <select ng-model="user.language">
+                            <option>Malayalam</option>
+                            <option>English</option>
+                            <option>Hindi</option>
+                            <option>Tamil</option>
+                        </select>
+                    </label>
+
+                    <button class="button button-block button-positive" ng-click="signIn(user)">
+                        Search
+                    </button>
+                    <p>
+                        This is an app to search and get your faverait fish name in different language.
+                    </p>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
 </ion-view>

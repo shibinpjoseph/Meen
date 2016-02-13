@@ -1,6 +1,6 @@
 angular.module('meen.controllers', [])
 
-.controller('DashCtrl', function($scope, $state, $location, dataService) {
+.controller('DashCtrl', function($scope, $state, $location, dataService, $rootScope) {
     
      console.log('DashCtrl');
 
