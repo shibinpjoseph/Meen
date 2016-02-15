@@ -5,17 +5,17 @@ angular.module('meen.controllers', [])
     //console.log('DashCtrl');
     var dataPromise =  DataService.all();
 
-    $scope.searchQuery = {
+    $scope.query = {
         name: '',
-        language:''
+        language:'malayalam'
     };
 
     $scope.search = function(query) {
 
-        query = $scope.searchQuery;
+        $rootScope.query = $scope.query;
         console.log("query:", query);
         $location.url('/tab/list');
-        $rootScope.query = query;
+
 
     };
 
@@ -47,10 +47,9 @@ angular.module('meen.controllers', [])
             $scope.pageError = error;
         }
     );
-
     
     $scope.clearSearch = function() {
-            $scope.query.query = "";
+            $scope.query.name = "";
             console.log('clicked Clear Search');
     };
 

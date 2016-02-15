@@ -1,6 +1,6 @@
 <ion-view>
     <ion-content class="padding welcome">
-        <form name="signinForm" novalidate="">
+        <form name="signinForm">
             <div class="wrapper">
                 <div>
                     <h1>Welcome</h1>
@@ -8,22 +8,22 @@
                 <img src="../img/logo.png" align="middle" />
                 <div class="list">
                     <label class="item item-input">
-                        <input type="text" placeholder="Enter Fish Name" name="username" ng-model="user.query">
+                        <input type="text" placeholder="Enter Fish Name" ng-model="query.name">
                     </label>
 
                     <label class="item item-input item-select button-blue">
                         <div class="input-label">
                             Choose language
                         </div>
-                        <select ng-model="user.language">
-                            <option>Malayalam</option>
-                            <option>English</option>
-                            <option>Hindi</option>
-                            <option>Tamil</option>
+                        <select ng-model="query.language">
+                            <option value="malayalam">Malayalam</option>
+                            <option value="english">English</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="tamil">Tamil</option>
                         </select>
                     </label>
 
-                    <button class="button button-block button-positive" ng-click="search(user)">
+                    <button class="button button-block button-positive" ng-click="search(query)">
                         Search
                     </button>
                     <p>

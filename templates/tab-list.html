@@ -8,31 +8,30 @@
         <div class="bar bar-subheader">
             <div class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Search" ng-model="query.query">
+                <input type="text" placeholder="Search" ng-model="query.name">
                 <i class="clear-search icon ion-ios7-close-empty" ng-click="clearSearch()"></i>
             </div>
             <div class="item1 item-input1">
                 <label class="formgroup">by:
-                    <select ng-model='orderArtist'>
-                        <option value='fishNameEnglish'>English</option>
-                        <option value='fishNameMalayalam'>Malayalam</option>
-                        <option value='fishNameTamil'>Tamil</option>
-                        <option value='fishNameHindi'>Hindi</option>
-                        <option value='fishNameOther'>Other</option>
+                    <select ng-model='query.language'>
+                        <option value="malayalam">Malayalam</option>
+                            <option value="english">English</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="tamil">Tamil</option>
                     </select>
                 </label>
                 <label class="formgroup">
-                    <input type="radio" ng-model="direction" name="direction" checked> ascending
+                    <input type="radio" ng-model="query.direction" name="direction" checked> ascending
                 </label>
                 <label class="formgroup">
-                    <input type="radio" ng-model="direction" name="direction" value="reverse"> discending
+                    <input type="radio" ng-model="query.direction" name="direction" value="reverse"> discending
                 </label>
             </div>
         </div>
     </div>
     <ion-content class="has-subheader padding" >
        <div class="list list-inset">
-        <div class="list card" ng-repeat="fish in itemList.fishes | filter: query.query | orderBy: orderArtist:direction">
+        <div class="list card" ng-repeat="fish in itemList.fishes | filter: query.name | orderBy: 'fishNameEnglish':query.direction">
             <div class="item item-avatar">
                 <h2>{{ fish.fishNameEnglish }}</h2>
             </div>
@@ -45,7 +44,7 @@
             <p><b>Other :</b> {{ fish.fishNameOther }}</p>
         </div>
         </div>
-        <div ng-show="(allfish | filter: query.query).length == 0">
+        <div ng-show="(itemList.fishes | filter: query.name).length == 0">
             Fish not found !
         </div>
     </ion-content>
