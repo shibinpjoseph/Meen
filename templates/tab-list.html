@@ -9,7 +9,7 @@
             <div class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" placeholder="Search" ng-model="query.name">
-                <i class="clear-search icon ion-ios7-close-empty" ng-click="clearSearch()"></i>
+                <i class="clear-search icon ion-ios7-close-empty" ng-show="query.name.length" ng-click="clearSearch()"></i>
             </div>
             <div class="item1 item-input1">
                 <label class="formgroup">by:
@@ -38,10 +38,26 @@
             <div class="item item-image">
                 <img ng-src="{{ fish.fishImage }}">
             </div>
-            <p><b>Tamil :</b> {{ fish.fishNameTamil }}</p>
-            <p><b>Malayalam :</b> {{ fish.fishNameMalayalam }}</p>
-            <p><b>Hindi :</b> {{ fish.fishNameHindi }}</p>
-            <p><b>Other :</b> {{ fish.fishNameOther }}</p>
+            <p ng-if="fish.fishNameMalayalam.length">
+                <b>Malayalam :</b> <span
+                    ng-repeat="malayalam in fish.fishNameMalayalam  track by $index">{{ malayalam }}<span
+                    ng-show="fish.fishNameMalayalam.length>1">, </span></span>
+            </p>
+            <p ng-if="fish.fishNameTamil.length">
+               <b>Tamil :</b> <span
+                ng-repeat="tamil in fish.fishNameTamil  track by $index">{{ tamil }}<span
+                ng-show="fish.fishNameTamil.length>1">, </span>
+            </p>
+            <p ng-if="fish.fishNameHindi.length">
+                   <b>Hindi :</b> <span
+                    ng-repeat="hindi in fish.fishNameHindi  track by $index">{{ hindi }}<span
+                    ng-show="fish.fishNameHindi.length>1">, </span></span>
+            </p>
+            <p ng-if="fish.fishNameOther.length">
+                   <b>Other :</b> <span
+                    ng-repeat="other in fish.fishNameOther  track by $index">{{ other }}<span
+                    ng-show="fish.fishNameOther.length>1">, </span></span>
+            </p>
         </div>
         </div>
         <div ng-show="(itemList.fishes | filter: query.name).length == 0">
