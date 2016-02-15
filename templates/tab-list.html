@@ -32,7 +32,7 @@
     </div>
     <ion-content class="has-subheader padding" >
        <div class="list list-inset">
-        <div class="list card" ng-repeat="fish in allfish | filter: query.query | orderBy: orderArtist:direction">
+        <div class="list card" ng-repeat="fish in itemList.fishes | filter: query.query | orderBy: orderArtist:direction">
             <div class="item item-avatar">
                 <h2>{{ fish.fishNameEnglish }}</h2>
             </div>

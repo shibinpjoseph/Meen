@@ -1,81 +1,61 @@
 angular.module('meen.controllers', [])
 
-.controller('DashCtrl', function($scope, $state, $location, dataService, $rootScope) {
+.controller('DashCtrl', function($scope, $state, $location, $rootScope, DataService) {
     
-     console.log('DashCtrl');
+    //console.log('DashCtrl');
+    var dataPromise =  DataService.all();
 
-     $scope.user = {
-            query: '',
-            language:''
-        };
-    
-    $scope.signIn = function(user) {
+    $scope.searchQuery = {
+        name: '',
+        language:''
+    };
 
-        query = $scope.user;
+    $scope.search = function(query) {
+
+        query = $scope.searchQuery;
         console.log("query:", query);
         $location.url('/tab/list');
+        $rootScope.query = query;
 
     };
-    
-    $scope.createTask = function(task) {
-        console.log('click');
-        $scope.tasks.push({
-          title: task.title
-        });
-        $scope.taskModal.hide();
-        task.title = "";
-    };
-})
 
-.controller('FishlistCtrl', function($scope, $state, $http, $q) {
-    
-    console.log('FishlistCtrl')
-    
-    $scope.init = function(){
+    dataPromise.then(
+        function(response){
+        $scope.dataList = response; //assign data here to your $scope object
+            console.log("Fish List", $scope.dataList);
+        },
+        function(error){
+            console.log(error);
+        }
+    );
 
-        $scope.query = query;
-        console.log("queryWW:", query);
+}) // Dashboard CTRL
 
-        $scope.getImages()
-
-        .then(function(result){
-            console.log("Fishes:", result);
-            $scope.allfish = result.allfish;
-         }, function(status){
-            console.log("errors:", status);
-            $scope.pageError = status;
-        })
+.controller('FishlistCtrl', function($scope, $rootScope, $state, $http, $q, DataService) {
     
-    }
-    
-
-    $scope.getImages = function(){
-        
-        var defer = $q.defer();
-        
-        $http.get('fish1.json?callback=JSON_CALLBACK')
-        
-            .success(function (result) {
-                defer.resolve(result)
-            })
-            .error(function(status, err){
-                defer.reject(status)
-            })
-        
-        return defer.promise;
-    
-    }
-    
+    //console.log('FishlistCtrl')
+    var dataPromise =  DataService.all();
     $scope.orderArtist = 'fishNameMalayalam';
+    
+    dataPromise.then(
+        function(response){
+        $scope.itemList = response; //assign data here to your $scope object
+        console.log('Item List', $scope.itemList);
+        },
+        function(error){
+            console.log("errors:", error);
+            $scope.pageError = error;
+        }
+    );
+
     
     $scope.clearSearch = function() {
             $scope.query.query = "";
-            console.log('click');
+            console.log('clicked Clear Search');
     };
+
     
-    $scope.init();
-    
-});
+}); // Fish controller
 
 
 
